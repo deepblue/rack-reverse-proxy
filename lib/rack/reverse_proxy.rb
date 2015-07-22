@@ -76,6 +76,7 @@ module Rack
       # Let rack set the transfer-encoding header
       response_headers = target_response.headers
       response_headers.delete('transfer-encoding')
+      response_headers.delete('Status')
 
       # Replace the location header with the proxy domain
       if response_headers['location'] && options[:replace_response_host]
